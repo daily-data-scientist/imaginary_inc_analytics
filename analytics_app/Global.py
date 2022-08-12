@@ -15,9 +15,12 @@ locale.setlocale(locale.LC_ALL, "")
 # connection = psycopg2.connect(
 #     "postgres://postgres:{db_params.password}@localhost:5433/imaginary-inc"
 # )
-connection = psycopg2.connect(
-    "postgres://postgres:st.secrets["db_password"]@localhost:5433/imaginary-inc"
-)
+
+connection = psycopg2.connect(**st.secrets["postgres"])
+
+
+
+
 
 # to have wide mode by default
 st.set_page_config(layout="wide")

@@ -2,3 +2,4 @@ db_params.py
 env
 __pycache__
 database_setup
+secrets.toml
