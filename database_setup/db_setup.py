@@ -12,8 +12,10 @@ conn = psycopg2.connect(
 # --------------------------
 # POPULATING customer TABLE |
 # --------------------------
+
 # Creating dataframe to populate 'customer' table using Faker package
 fake = Faker()
+
 
 def create_rows(num=1):
     output = [
@@ -27,6 +29,7 @@ def create_rows(num=1):
         for x in range(num)
     ]
     return output
+
 
 customer_df = pd.DataFrame(create_rows(10))
 
@@ -50,10 +53,6 @@ def execute_values(conn, df, table):
     print("the dataframe is inserted")
     cursor.close()
 
+
 execute_values(conn, customer_df, "customers")
 
-
-
-# -----------------------
-# POPULATING REF TABLES |
-# -----------------------
