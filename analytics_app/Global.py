@@ -12,8 +12,11 @@ import locale
 locale.setlocale(locale.LC_ALL, "")
 
 # SQL DB connection
+# connection = psycopg2.connect(
+#     "postgres://postgres:{db_params.password}@localhost:5433/imaginary-inc"
+# )
 connection = psycopg2.connect(
-    "postgres://postgres:{db_params.password}@localhost:5433/imaginary-inc"
+    "postgres://postgres:st.secrets["db_password"]@localhost:5433/imaginary-inc"
 )
 
 # to have wide mode by default
