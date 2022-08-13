@@ -1,10 +1,10 @@
 import psycopg2
-import db_params
 import streamlit as st
 import numpy as np
 import pandas as pd
 import datetime
-#from statsmodels import robust
+
+# from statsmodels import robust
 # from scipy import stats as sts
 import plotly.express as px
 import locale
@@ -12,25 +12,17 @@ import locale
 locale.setlocale(locale.LC_ALL, "")
 
 # SQL DB connection
-# connection = psycopg2.connect(
-#     "postgres://postgres:{db_params.password}@localhost:5433/imaginary-inc"
-# )
-
 connection = psycopg2.connect(**st.secrets["postgres"])
 
-
-
-
-
-# to have wide mode by default
+# to have wide mode by default for Streamlit
 st.set_page_config(layout="wide")
 
-# Filters/Inputs
+# Creating Filters & Inputs
 date_range = st.date_input(
     "Date Range", [datetime.date(2016, 1, 1), datetime.date(2022, 12, 1)]
 )
 
-
+# Dashboard begins HERE...
 # CURRENT PORTFOLIO
 st.markdown("## Imaginary Inc Global Portfolio")
 
