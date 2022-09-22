@@ -3,3 +3,4 @@ env
 __pycache__
 database_setup
 secrets.toml
+analytics_app
