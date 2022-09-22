@@ -4,3 +4,4 @@ __pycache__
 database_setup
 secrets.toml
 analytics_app
+.DS_Store
